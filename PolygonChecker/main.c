@@ -1,3 +1,8 @@
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
+
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -18,30 +23,35 @@ int main() {
 
 		switch (shapeChoice)
 		{
+
 		case 1:
 			printf_s("Triangle selected.\n");
 
 			// get user input for 3 sides of the triangle 
-			int triangleSides[3] = { 0, 0, 0 };
+			int triangleSides[TRIANGLESIDES] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
 			
 			// returns the type of triangle 
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 
-			// calculates the three angles inside of the triangle
-			//double triangleAngles;
-			triangleAnglesCalculator(triangleSides[0], triangleSides[1], triangleSides[2]);
-			//printf("The 3 angles inside of the triangle are: %f, %f, %f.\n", triangleAngles[0], triangleAngles[1], triangleAngles[2]);
+			// calculates the three angles inside of the triangle and returns sum of angles
+			float triangleAngles[TRIANGLESIDES] = { 0, 0, 0 };
+			float sumOfInteriorAngles = triangleAnglesCalculator(triangleSides, triangleAngles);
+			printf_s("Interior angles of the triangle are %.3f, %.3f, %.3f and the sum is %.3f", triangleAngles[0], triangleAngles[1], triangleAngles[2], sumOfInteriorAngles);
 			break;
+
 		case 0:
 			continueProgram = false;
 			break;
+
 		default:
 			printf_s("Invalid value entered.\n");
 			break;
+
 		}
 	}
+
 	return 0;
 }
 
@@ -73,8 +83,3 @@ int* getTriangleSides(int* triangleSides) {
 	}
 	return triangleSides;
 }
-
-// testing ryannn
-// testing yao
-
-//testing
