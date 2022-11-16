@@ -3,6 +3,9 @@
 
 #include "main.h"
 #include "triangleSolver.h"
+#include "triangleAngleCalculator.h"
+
+#define TRIANGLESIDES 3
 
 int side = 0;
 
@@ -17,11 +20,19 @@ int main() {
 		{
 		case 1:
 			printf_s("Triangle selected.\n");
+
+			// get user input for 3 sides of the triangle 
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			//printf_s("! %d\n", triangleSidesPtr[0]);
+			
+			// returns the type of triangle 
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
+
+			// calculates the three angles inside of the triangle
+			//double triangleAngles;
+			triangleAnglesCalculator(triangleSides[0], triangleSides[1], triangleSides[2]);
+			//printf("The 3 angles inside of the triangle are: %f, %f, %f.\n", triangleAngles[0], triangleAngles[1], triangleAngles[2]);
 			break;
 		case 0:
 			continueProgram = false;
@@ -48,8 +59,8 @@ int printShapeMenu() {
 
 	int shapeChoice;
 
-	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
+	printf_s("Enter number:");
+	scanf_s("%d", &shapeChoice);
 
 	return shapeChoice;
 }
