@@ -9,6 +9,7 @@
 #include "main.h"
 #include "triangleSolver.h"
 #include "triangleAngleCalculator.h"
+#include "rectangleSolver.h"
 
 #define TRIANGLESIDES 3
 
@@ -18,11 +19,11 @@ int main() {
 	bool continueProgram = true;
 	while (continueProgram) {
 		printWelcome();
-
 		int shapeChoice = printShapeMenu();
-
 		switch (shapeChoice)
 		{
+
+
 
 		case 1:
 			printf_s("Triangle selected.\n");
