@@ -22,8 +22,20 @@ int main() {
 		int shapeChoice = printShapeMenu();
 		switch (shapeChoice)
 		{
+		case 2:
+			printf_s("Rectangle selected.\n");
+			POINT a, b, c, d;
+			
+			// get user input for 4 points of rectangle
+			getRectangleSides(&a, &b, &c, &d);
 
+			// find if points given makes a rectangle
+			if (isRectangle(a, b, c, d) != true) // not rectangle -> break
+				break;
+			else // is rectangle -> print it
+				printRectangle(a, b, c, d);
 
+			break;
 
 		case 1:
 			printf_s("Triangle selected.\n");
@@ -65,6 +77,7 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
+	printf_s("2. Rectangle\n");
 	printf_s("1. Triangle\n");
 	printf_s("0. Exit\n");
 
