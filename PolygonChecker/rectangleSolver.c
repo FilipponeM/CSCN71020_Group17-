@@ -1,16 +1,11 @@
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
 // Function definitions for rectangle solving
-// Yao Wang ywang0789
 
 #include "rectangleSolver.h"
 
-POINT createPoint(char c, int x, int y)
-{
-	POINT p;
-	p.id = c;
-	p.x = x;
-	p.y = y;
-	return p;
-}
 
 void printRectangle(POINT a, POINT b, POINT c, POINT d)
 {
@@ -26,10 +21,10 @@ void printRectangle(POINT a, POINT b, POINT c, POINT d)
 	int max = findLargest(distance, 6);
 
 	// print coordinates
-	printf("Points %c = (%d, %d)\n", a.id, a.x, a.y);
-	printf("Points %c = (%d, %d)\n", b.id, b.x, b.y);
-	printf("Points %c = (%d, %d)\n", c.id, c.x, c.y);
-	printf("Points %c = (%d, %d)\n", d.id, d.x, d.y);
+	printf("Point %c = (%d, %d)\n", a.id, a.x, a.y);
+	printf("Point %c = (%d, %d)\n", b.id, b.x, b.y);
+	printf("Point %c = (%d, %d)\n", c.id, c.x, c.y);
+	printf("Point %c = (%d, %d)\n", d.id, d.x, d.y);
 
 	// print side lengths
 	if (max != distance[0])
@@ -86,9 +81,15 @@ bool isRectangle(POINT a, POINT b, POINT c, POINT d)
 	sortInts(distance, 6);
 	
 	// check if 2 longest distances are equal and size lengths are equal
-	if (distance[0] == distance[1] && distance[2] == distance[3] && distance[4] == distance[5])
+	if (distance[0] == distance[1] && distance[2] == distance[3] && distance[4] == distance[5] && distance[2] != distance[4])
 	{
-		printf("This is a rectangle/square\n");
+		printf("This is a rectangle\n");
+
+		return true;
+	}
+	else if (distance[0] == distance[1] && distance[2] == distance[3] && distance[4] == distance[5] && distance[2] == distance[4])
+	{
+		printf("This is a square\n");
 
 		return true;
 	}
@@ -134,4 +135,36 @@ bool haveZero(int* n, int size)
 			return true;
 	}
 	return false;
+}
+
+
+void getRectangleSides(POINT* a, POINT* b, POINT* c, POINT* d)
+{
+	printf_s("Enter point A of the rectangle: \n");
+	printf_s("x: ");
+	scanf_s("%d", &a->x);
+	printf_s("y: ");
+	scanf_s("%d", &a->y);
+	a->id = 'A';
+
+	printf_s("Enter point B of the rectangle: \n");
+	printf_s("x: ");
+	scanf_s("%d", &b->x);
+	printf_s("y: ");
+	scanf_s("%d", &b->y);
+	b->id = 'B';
+
+	printf_s("Enter point C of the rectangle: \n");
+	printf_s("x: ");
+	scanf_s("%d", &c->x);
+	printf_s("y: ");
+	scanf_s("%d", &c->y);
+	c->id = 'C';
+
+	printf_s("Enter point D of the rectangle: \n");
+	printf_s("x: ");
+	scanf_s("%d", &d->x);
+	printf_s("y: ");
+	scanf_s("%d", &d->y);
+	d->id = 'D';
 }

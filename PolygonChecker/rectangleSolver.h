@@ -1,6 +1,10 @@
 #pragma once
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
 // Function declaration and description for rectangle solving
-// Yao Wang ywang0789
+
 #define SQUARE(n)	n*n
 #include <stdlib.h>
 #include <stdbool.h>
@@ -17,8 +21,6 @@ typedef struct point
 	int y;
 }POINT;
 
-// creates point struct from x y coordinates
-POINT createPoint(char c,int x, int y);
 
 // checks if 4 points given makes a rectangle
 // compares all distances betweeen points:
@@ -44,3 +46,6 @@ int findLargest(int* n, int size);
 // prints rectangle side lengths from its points
 // *points must be verified as a rectangle*
 void printRectangle(POINT, POINT, POINT, POINT);
+
+// gets 4 points of rectangle from user input
+void getRectangleSides(POINT* a, POINT* b, POINT* c, POINT* d);
