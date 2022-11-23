@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PolygonChecker", "PolygonChecker\PolygonChecker.vcxproj", "{2328FAE1-A1BF-420F-9F0C-C7CCC7F13314}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rectangleSolverTest", "rectangleSolverTest\rectangleSolverTest.vcxproj", "{BE1B374E-7076-433A-9434-0DF5D941418B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "triangleAngleCalculatorTest", "triangleAngleCalculatorTest\triangleAngleCalculatorTest.vcxproj", "{3F8394E6-611E-42E5-A9A3-6E386BA325B5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "triangleSolverTest", "triangleSolverTest\triangleSolverTest.vcxproj", "{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +27,30 @@ Global
 		{2328FAE1-A1BF-420F-9F0C-C7CCC7F13314}.Release|x64.Build.0 = Release|x64
 		{2328FAE1-A1BF-420F-9F0C-C7CCC7F13314}.Release|x86.ActiveCfg = Release|Win32
 		{2328FAE1-A1BF-420F-9F0C-C7CCC7F13314}.Release|x86.Build.0 = Release|Win32
+		{BE1B374E-7076-433A-9434-0DF5D941418B}.Debug|x64.ActiveCfg = Debug|x64
+		{BE1B374E-7076-433A-9434-0DF5D941418B}.Debug|x64.Build.0 = Debug|x64
+		{BE1B374E-7076-433A-9434-0DF5D941418B}.Debug|x86.ActiveCfg = Debug|Win32
+		{BE1B374E-7076-433A-9434-0DF5D941418B}.Debug|x86.Build.0 = Debug|Win32
+		{BE1B374E-7076-433A-9434-0DF5D941418B}.Release|x64.ActiveCfg = Release|x64
+		{BE1B374E-7076-433A-9434-0DF5D941418B}.Release|x64.Build.0 = Release|x64
+		{BE1B374E-7076-433A-9434-0DF5D941418B}.Release|x86.ActiveCfg = Release|Win32
+		{BE1B374E-7076-433A-9434-0DF5D941418B}.Release|x86.Build.0 = Release|Win32
+		{3F8394E6-611E-42E5-A9A3-6E386BA325B5}.Debug|x64.ActiveCfg = Debug|x64
+		{3F8394E6-611E-42E5-A9A3-6E386BA325B5}.Debug|x64.Build.0 = Debug|x64
+		{3F8394E6-611E-42E5-A9A3-6E386BA325B5}.Debug|x86.ActiveCfg = Debug|Win32
+		{3F8394E6-611E-42E5-A9A3-6E386BA325B5}.Debug|x86.Build.0 = Debug|Win32
+		{3F8394E6-611E-42E5-A9A3-6E386BA325B5}.Release|x64.ActiveCfg = Release|x64
+		{3F8394E6-611E-42E5-A9A3-6E386BA325B5}.Release|x64.Build.0 = Release|x64
+		{3F8394E6-611E-42E5-A9A3-6E386BA325B5}.Release|x86.ActiveCfg = Release|Win32
+		{3F8394E6-611E-42E5-A9A3-6E386BA325B5}.Release|x86.Build.0 = Release|Win32
+		{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}.Debug|x64.ActiveCfg = Debug|x64
+		{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}.Debug|x64.Build.0 = Debug|x64
+		{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}.Debug|x86.ActiveCfg = Debug|Win32
+		{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}.Debug|x86.Build.0 = Debug|Win32
+		{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}.Release|x64.ActiveCfg = Release|x64
+		{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}.Release|x64.Build.0 = Release|x64
+		{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}.Release|x86.ActiveCfg = Release|Win32
+		{BB1C8D7F-A1A7-4B6B-A602-E59E9A665D40}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
