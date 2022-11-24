@@ -1,3 +1,7 @@
+// Test for triangle sides function 
+// Will test the return of the triangle sides finder 
+// Ryan Tu - November 2022
+
 #include "pch.h"
 #include "CppUnitTest.h"
 
@@ -9,8 +13,25 @@ namespace triangleSolverTest
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		// Tests if scalene works  
+		TEST_METHOD(ScaleneTest1)
 		{
+
+		}
+
+		TEST_METHOD(ScaleneTest2)
+		{
+
+		}
+
+		// Tests if isoceles works 
+		TEST_METHOD(IsocelesTest1)
+		{
+
+		}
+		TEST_METHOD(IsocelesTest2)
+		{
+
 		}
 	};
 }
