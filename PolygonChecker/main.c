@@ -49,9 +49,9 @@ int main() {
 			printf_s("%s\n", result);
 
 			// calculates the three angles inside of the triangle and returns sum of angles
-			float triangleAngles[TRIANGLESIDES] = { 0, 0, 0 };
-			float sumOfInteriorAngles = triangleAnglesCalculator(triangleSides, triangleAngles);
-			printf_s("Interior angles of the triangle are %.3f, %.3f, %.3f and the sum is %.3f", triangleAngles[0], triangleAngles[1], triangleAngles[2], sumOfInteriorAngles);
+			double triangleAngles[TRIANGLESIDES] = { 0.0, 0.0, 0.0 };
+			double sumOfInteriorAngles = triangleAnglesCalculator(triangleSides, triangleAngles);
+			printf_s("Interior angles of the triangle are %.3lf, %.3f, %.3lf and the sum is %.3lf", triangleAngles[0], triangleAngles[1], triangleAngles[2], sumOfInteriorAngles);
 			break;
 
 		case 0:

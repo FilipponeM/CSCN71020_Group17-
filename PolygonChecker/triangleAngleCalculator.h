@@ -3,4 +3,4 @@
 
 #pragma once
 
-float triangleAnglesCalculator(int* triangleSides, float* interiorAngles);
+double triangleAnglesCalculator(int* triangleSides, double* interiorAngles);
