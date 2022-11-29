@@ -43,9 +43,5 @@ bool haveZero(int* n, int size);
 // find largest int value from array
 int findLargest(int* n, int size);
 
-// prints rectangle side lengths from its points
-// *points must be verified as a rectangle*
-void printRectangle(POINT, POINT, POINT, POINT);
-
 // gets 4 points of rectangle from user input
 void getRectangleSides(POINT* a, POINT* b, POINT* c, POINT* d);
