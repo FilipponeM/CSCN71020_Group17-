@@ -41,7 +41,7 @@ namespace triangleAngleCalculatorTest
 			triangleAnglesCalculator(triangleSides, triangleAngles);
 
 			double rounded = round(triangleAngles[0]);
-			Assert::AreEqual(60.00, rounded);
+			Assert::AreEqual(60.0, rounded);
 		}
 
 		// Test angle 2 
