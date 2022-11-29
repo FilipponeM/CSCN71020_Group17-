@@ -13,6 +13,7 @@
 
 #define TRIANGLESIDES 3
 
+
 int side = 0;
 
 int main() {
@@ -24,16 +25,22 @@ int main() {
 		{
 		case 2:
 			printf_s("Rectangle selected.\n");
-			POINT a, b, c, d;
-			
+
+			POINT points [RECTANGLEPOINTS];
+
 			// get user input for 4 points of rectangle
-			getRectangleSides(&a, &b, &c, &d);
+			getRectangleSides(points);
 
 			// find if points given makes a rectangle
-			if (isRectangle(a, b, c, d) != true) // not rectangle -> break
+			if (isRectangle(points) != true) // not rectangle -> break
+			{
 				break;
+			}
 			else // is rectangle -> print it
-				printRectangle(a, b, c, d);
+			{
+				sortRectanglePoints(points);
+				printRectangle(points);
+			}
 
 			break;
 
@@ -85,6 +92,7 @@ int printShapeMenu() {
 
 	printf_s("Enter number:");
 	scanf_s("%d", &shapeChoice);
+	int temp = getchar(); // to clear stdin
 
 	return shapeChoice;
 }
@@ -98,38 +106,4 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
-void printRectangle(POINT a, POINT b, POINT c, POINT d)
-{
-	// find distances b/w points
-	int distance[6];
-	distance[0] = findDistanceUnit(a, b);
-	distance[1] = findDistanceUnit(a, c);
-	distance[2] = findDistanceUnit(a, d);
-	distance[3] = findDistanceUnit(b, c);
-	distance[4] = findDistanceUnit(b, d);
-	distance[5] = findDistanceUnit(c, d);
-	// find max distance
-	int max = findLargest(distance, 6);
-
-	// print coordinates
-	printf("Point %c = (%d, %d)\n", a.id, a.x, a.y);
-	printf("Point %c = (%d, %d)\n", b.id, b.x, b.y);
-	printf("Point %c = (%d, %d)\n", c.id, c.x, c.y);
-	printf("Point %c = (%d, %d)\n", d.id, d.x, d.y);
-
-	// print side lengths
-	if (max != distance[0])
-		printf("Distance from point %c to %c is %lf\n", a.id, b.id, sqrt(distance[0]));
-	if (max != distance[1])
-		printf("Distance from point %c to %c is %lf\n", a.id, c.id, sqrt(distance[1]));
-	if (max != distance[2])
-		printf("Distance from point %c to %c is %lf\n", a.id, d.id, sqrt(distance[2]));
-	if (max != distance[3])
-		printf("Distance from point %c to %c is %lf\n", b.id, c.id, sqrt(distance[3]));
-	if (max != distance[4])
-		printf("Distance from point %c to %c is %lf\n", b.id, d.id, sqrt(distance[4]));
-	if (max != distance[5])
-		printf("Distance from point %c to %c is %lf\n", c.id, d.id, sqrt(distance[5]));
-
-}
 

@@ -4,7 +4,8 @@
 // Fall 2022 - Software Implementation 
 // Members: Matteo Filippone, Yao Wang, Ryan Tu
 // Function declaration and description for rectangle solving
-
+#define RECTANGLEPOINTS 4 // number of rectangle sides
+#define RECTANGLELINES 6 // number of connecting points in a rectangle
 #define SQUARE(n)	n*n
 #include <stdlib.h>
 #include <stdbool.h>
@@ -21,13 +22,14 @@ typedef struct point
 	int y;
 }POINT;
 
+// creates a point struct
+POINT createPoint(int x, int y, char id);
 
 // checks if 4 points given makes a rectangle
 // compares all distances betweeen points:
 // - no distances are 0
 // - 2 longest distances (hypotenuse) are equal
-// - side distances must not be equal
-bool isRectangle(POINT, POINT, POINT, POINT);
+bool isRectangle(POINT*);
 
 // returns the SQUARED distance b/w 2 points for comparison 
 // formula for distance b/w 2 points: d = sqrt[(x2 - x1)^2 + (y2 - y1)^2]
@@ -44,4 +46,12 @@ bool haveZero(int* n, int size);
 int findLargest(int* n, int size);
 
 // gets 4 points of rectangle from user input
-void getRectangleSides(POINT* a, POINT* b, POINT* c, POINT* d);
+void getRectangleSides(POINT*);
+
+// sort points so points adjacent in array make rectangle sides instead of hypotenuse
+// must verify if isRectangle() first
+void sortRectanglePoints(POINT* p);
+
+// prints rectangle side to screen
+// must verify if isRectangle() first
+void printRectangle(POINT*);

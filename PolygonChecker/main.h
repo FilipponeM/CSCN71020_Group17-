@@ -7,4 +7,5 @@
 void printWelcome();
 int printShapeMenu();
 int* getTriangleSides(int* triangleSides);
-void printRectangle(POINT, POINT, POINT, POINT);
+
+

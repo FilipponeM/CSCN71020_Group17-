@@ -7,7 +7,14 @@
 #include "rectangleSolver.h"
 
 
-
+POINT createPoint(int x, int y, char id)
+{
+	POINT p;
+	p.x = x;
+	p.y = y;
+	p.id = id;
+	return p;
+}
 
 int findLargest(int* n, int size)
 {
@@ -27,25 +34,28 @@ int findLargest(int* n, int size)
 	return max;
 }
 
-bool isRectangle(POINT a, POINT b, POINT c, POINT d)
+bool isRectangle(POINT* p)
 {
 	// find distances b/w points
-	int distance[6]; 
-	distance[0] = findDistanceUnit(a, b);
-	distance[1] = findDistanceUnit(a, c);
-	distance[2] = findDistanceUnit(a, d);
-	distance[3] = findDistanceUnit(b, c);
-	distance[4] = findDistanceUnit(b, d);
-	distance[5] = findDistanceUnit(c, d);
+	int distance[RECTANGLELINES]; 
+	int count = 0;
+	for (int i = 0; i < RECTANGLEPOINTS; i++)
+	{
+		for (int j = i + 1; j < RECTANGLEPOINTS; j++)
+		{
+			distance[count] = findDistanceUnit(p[i],p[j]);
+			count++;
+		}
+	}
 
 	// check is any distances are zero
-	if (haveZero(distance, 6) == true)
+	if (haveZero(distance, RECTANGLELINES) == true)
 	{
 		printf("This is not a 4 sided shape\n");
 		return false;
 	}
 	// sort array of distances from largest to smallest
-	sortInts(distance, 6);
+	sortInts(distance, RECTANGLELINES);
 	
 	// check if 2 longest distances are equal and size lengths are equal
 	if (distance[0] == distance[1] && distance[2] == distance[3] && distance[4] == distance[5] && distance[2] != distance[4])
@@ -105,33 +115,70 @@ bool haveZero(int* n, int size)
 }
 
 
-void getRectangleSides(POINT* a, POINT* b, POINT* c, POINT* d)
+void getRectangleSides(POINT* p)
 {
-	printf_s("Enter point A of the rectangle: \n");
-	printf_s("x: ");
-	scanf_s("%d", &a->x);
-	printf_s("y: ");
-	scanf_s("%d", &a->y);
-	a->id = 'A';
+	int temp;
+	int x, y;
+	char id = 'A';
 
-	printf_s("Enter point B of the rectangle: \n");
-	printf_s("x: ");
-	scanf_s("%d", &b->x);
-	printf_s("y: ");
-	scanf_s("%d", &b->y);
-	b->id = 'B';
+	for (int i = 0; i < RECTANGLEPOINTS; i++)
+	{
+		printf_s("Enter point %c of the rectangle: \n", id);
+		printf_s("x: ");
+		scanf_s("%d", &x);
+		temp = getchar(); // to clear stdin
+		printf_s("y: ");
+		scanf_s("%d", &y);
+		temp = getchar(); // to clear stdin
+		p[i] = createPoint(x, y, id);
+		id++;
+	}
+}
 
-	printf_s("Enter point C of the rectangle: \n");
-	printf_s("x: ");
-	scanf_s("%d", &c->x);
-	printf_s("y: ");
-	scanf_s("%d", &c->y);
-	c->id = 'C';
+void sortRectanglePoints(POINT* p)
+{
 
-	printf_s("Enter point D of the rectangle: \n");
-	printf_s("x: ");
-	scanf_s("%d", &d->x);
-	printf_s("y: ");
-	scanf_s("%d", &d->y);
-	d->id = 'D';
+	// find distances b/w points
+	int distance[RECTANGLELINES];
+	int count = 0;
+	for (int i = 0; i < RECTANGLEPOINTS; i++)
+	{
+		for (int j = i + 1; j < RECTANGLEPOINTS; j++)
+		{
+			distance[count] = findDistanceUnit(p[i], p[j]);
+			count++;
+		}
+	}
+
+	// find max distance
+	int max = findLargest(distance, RECTANGLELINES);
+
+	// sort points 
+	POINT temp;
+	for (int i = 0; i < RECTANGLEPOINTS - 2; i++)
+	{
+		if (findDistanceUnit(p[i], p[i + 1]) == max)
+		{
+			temp = p[i + 1];
+			p[i+1]= p[i + 2];
+			p[i + 2] = temp;
+			continue;
+		}
+	}
+}
+
+
+void printRectangle(POINT* p)
+{
+	// print coordinates
+	for (int i = 0; i < RECTANGLEPOINTS; i++)
+	{
+		printf("Point %c = (%d, %d)\n", p[i].id, p[i].x, p[i].y);
+	}
+
+	// print side lengths
+	printf("Distance from point %c to %c is %lf\n", p[0].id, p[1].id, sqrt(findDistanceUnit(p[0], p[1])));
+	printf("Distance from point %c to %c is %lf\n", p[1].id, p[2].id, sqrt(findDistanceUnit(p[1], p[2])));
+	printf("Distance from point %c to %c is %lf\n", p[2].id, p[3].id, sqrt(findDistanceUnit(p[2], p[3])));
+	printf("Distance from point %c to %c is %lf\n", p[3].id, p[0].id, sqrt(findDistanceUnit(p[3], p[0])));
 }
