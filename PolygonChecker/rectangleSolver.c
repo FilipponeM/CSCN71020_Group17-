@@ -177,8 +177,44 @@ void printRectangle(POINT* p)
 	}
 
 	// print side lengths
-	printf("Distance from point %c to %c is %lf\n", p[0].id, p[1].id, sqrt(findDistanceUnit(p[0], p[1])));
-	printf("Distance from point %c to %c is %lf\n", p[1].id, p[2].id, sqrt(findDistanceUnit(p[1], p[2])));
-	printf("Distance from point %c to %c is %lf\n", p[2].id, p[3].id, sqrt(findDistanceUnit(p[2], p[3])));
-	printf("Distance from point %c to %c is %lf\n", p[3].id, p[0].id, sqrt(findDistanceUnit(p[3], p[0])));
+	printf("Distance from point %c to %c is %lf\n", p[0].id, p[1].id, findSideLength(p[0], p[1]));
+	printf("Distance from point %c to %c is %lf\n", p[1].id, p[2].id, findSideLength(p[1], p[2]));
+	printf("Distance from point %c to %c is %lf\n", p[2].id, p[3].id, findSideLength(p[2], p[3]));
+	printf("Distance from point %c to %c is %lf\n", p[3].id, p[0].id, findSideLength(p[3], p[0]));
+
+	// print perimeter
+	printf("The perimeter is: %lf\n", findPerimeter(p));
+
+	// print area
+	printf("The area is: %lf\n", findRectangleArea(p));
+	
+
+}
+
+double findPerimeter(POINT* p)
+{
+	double perimeter;
+	double s1, s2, s3, s4;
+	s1 = findSideLength(p[0], p[1]);
+	s2 = findSideLength(p[1], p[2]);
+	s3 = findSideLength(p[2], p[3]);
+	s4 = findSideLength(p[3], p[0]);
+
+	perimeter = s1 + s2 + s3 + s4;
+	return perimeter;
+}
+
+double findSideLength(POINT a, POINT b)
+{
+	double len = sqrt(findDistanceUnit(a, b));
+	return len;
+}
+
+double findRectangleArea(POINT* p)
+{
+	double s1, s2, area;
+	s1 = findSideLength(p[0], p[1]);
+	s2 = findSideLength(p[1], p[2]);
+	area = s1 * s2;
+	return area;
 }

@@ -55,3 +55,16 @@ void sortRectanglePoints(POINT* p);
 // prints rectangle side to screen
 // must verify if isRectangle() first
 void printRectangle(POINT*);
+
+// returns perimeter of 4 points
+// must be sorted
+double findPerimeter(POINT* p);
+
+// returns side len between 2 points 
+// square root of distanceUnit()
+double findSideLength(POINT, POINT);
+
+// returns area of rectangle
+// must verify points make rectangle 
+// must be sorted points
+double findRectangleArea(POINT* p);

@@ -15,6 +15,9 @@ extern "C" POINT createPoint(int x, int y, char id);
 extern "C" void sortInts(int* n, int size);
 extern "C" bool haveZero(int* n, int size);
 extern "C" void sortRectanglePoints(POINT* p);
+extern "C" double findPerimeter(POINT * p);
+extern "C" double findSideLength(POINT a, POINT b);
+extern "C" double findRectangleArea(POINT * p);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -342,6 +345,97 @@ namespace rectangleSolverTest
 				Assert::AreEqual(expected[i].x, p[i].x);
 				Assert::AreEqual(expected[i].y, p[i].y);
 			}
+		}
+		// findPerimeter tests
+		TEST_METHOD(findPerimeter_test1)
+		{
+			POINT p[4];
+			p[0].x = 0;
+			p[0].y = 1;
+			p[1].x = 3;
+			p[1].y = 1;
+			p[2].x = 3;
+			p[2].y = 6;
+			p[3].x = 0;
+			p[3].y = 6;
+
+			double result = round(findPerimeter(p));
+
+			Assert::AreEqual(16.0, result);
+		}
+		TEST_METHOD(findPerimeter_test2)
+		{
+			POINT p[4];
+			p[0].x = 0;
+			p[0].y = 1;
+			p[1].x = 1;
+			p[1].y = 6;
+			p[2].x = 3;
+			p[2].y = 4;
+			p[3].x = -2;
+			p[3].y = 3;
+
+			double result = round(findPerimeter(p));
+
+			Assert::AreEqual(16.0, result);
+		}
+		// findRectangleArea tests
+		TEST_METHOD(findRectangleArea_test1)
+		{
+			POINT p[4];
+			p[0].x = 0;
+			p[0].y = 1;
+			p[1].x = 3;
+			p[1].y = 1;
+			p[2].x = 3;
+			p[2].y = 6;
+			p[3].x = 0;
+			p[3].y = 6;
+
+			double result = round(findRectangleArea(p));
+
+			Assert::AreEqual(15.0, result);
+		}
+		TEST_METHOD(findRectangleArea_test2)
+		{
+			POINT p[4];
+			p[0].x = 0;
+			p[0].y = 1;
+			p[1].x = 3;
+			p[1].y = 1;
+			p[2].x = 3;
+			p[2].y = 6;
+			p[3].x = 0;
+			p[3].y = 6;
+
+			double result = round(findRectangleArea(p));
+
+			Assert::AreEqual(15.0, result);
+		}
+		// findSideLength tests
+		TEST_METHOD(findSideLength_Test1)
+		{
+			POINT a, b;
+			a.x = 5;
+			a.y = 6;
+			b.x = 4;
+			b.y = 4;
+
+			double result = round(findSideLength(a,b));
+
+			Assert::AreEqual(2.0, result);
+		}
+		TEST_METHOD(findSideLength_Test2)
+		{
+			POINT a, b;
+			a.x = 7;
+			a.y = 6;
+			b.x = 0;
+			b.y = -1;
+
+			double result = round(findSideLength(a, b));
+
+			Assert::AreEqual(10.0, result);
 		}
 	};
 }
