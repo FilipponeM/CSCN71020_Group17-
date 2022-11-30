@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 #include "main.h"
 #include "triangleSolver.h"
@@ -55,10 +56,15 @@ int main() {
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 
-			// calculates the three angles inside of the triangle and returns sum of angles
-			double triangleAngles[TRIANGLESIDES] = { 0.0, 0.0, 0.0 };
-			double sumOfInteriorAngles = triangleAnglesCalculator(triangleSides, triangleAngles);
-			printf_s("Interior angles of the triangle are %.3lf, %.3f, %.3lf and the sum is %.3lf", triangleAngles[0], triangleAngles[1], triangleAngles[2], sumOfInteriorAngles);
+			char* compare = {"Not a triangle"};
+			int value = (strcmp(result, compare));
+			if (value != 0) {
+				// calculates the three angles inside of the triangle and returns sum of angles
+				double triangleAngles[TRIANGLESIDES] = { 0.0, 0.0, 0.0 };
+				double sumOfInteriorAngles = triangleAnglesCalculator(triangleSides, triangleAngles);
+				printf_s("Interior angles of the triangle are %.3lf, %.3f, %.3lf and the sum is %.3lf", triangleAngles[0], triangleAngles[1], triangleAngles[2], sumOfInteriorAngles);
+				
+			}
 			break;
 
 		case 0:
