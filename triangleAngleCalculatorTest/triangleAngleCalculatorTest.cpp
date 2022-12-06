@@ -114,5 +114,49 @@ namespace triangleAngleCalculatorTest
 			double rounded = round(triangleAngles[2]);
 			Assert::AreEqual(37.0, rounded);
 		}
+
+		// Failing test cases 
+		TEST_METHOD(FailingSumOfAngleTest)
+		{
+			int triangleSides[] = { 4, 4, 4};
+			double triangleAngles[] = { 0.0, 0.0, 0.0 };
+			double sumResult = 181.0;
+			sumResult = triangleAnglesCalculator(triangleSides, triangleAngles);
+
+			double rounded = round(sumResult);
+
+			Assert::AreEqual(181.0, rounded);
+		}
+
+		TEST_METHOD(FailingAngleTest1)
+		{
+			double triangleAngles[] = { 0.0, 0.0, 0.0 };
+			int triangleSides[] = { 3, 4, 5 };
+			triangleAnglesCalculator(triangleSides, triangleAngles);
+
+			double rounded = round(triangleAngles[2]);
+			Assert::AreEqual(38.0, rounded);
+		}
+
+		TEST_METHOD(FailingAngleTest2)
+		{
+			double triangleAngles[] = { 0.0, 0.0, 0.0 };
+			int triangleSides[] = { 4, 4, 4 };
+			triangleAnglesCalculator(triangleSides, triangleAngles);
+
+			double rounded = round(triangleAngles[2]);
+			Assert::AreEqual(61.0, rounded);
+		}
+
+		TEST_METHOD(FailingAngleTest3)
+		{
+			double triangleAngles[] = { 0.0, 0.0, 0.0 };
+			int triangleSides[] = { 2, 3, 4 };
+			triangleAnglesCalculator(triangleSides, triangleAngles);
+
+			double rounded = round(triangleAngles[2]);
+			Assert::AreEqual(30.0, rounded);
+		}
+
 	};
 }

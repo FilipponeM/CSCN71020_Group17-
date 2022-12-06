@@ -106,7 +106,7 @@ namespace triangleSolverTest
 
 		}
 
-		TEST_METHOD(FinalTest1) {
+		TEST_METHOD(FailingTest1) {
 
 			int triangleSides[] = { 3, -3, 3 };
 			char* tringleType[25];
@@ -117,7 +117,7 @@ namespace triangleSolverTest
 
 		}
 
-		TEST_METHOD(FinalTest2) {
+		TEST_METHOD(FailingTest2) {
 
 			int triangleSides[] = { 3, 4, 5 };
 			char* tringleType[25];
@@ -128,7 +128,7 @@ namespace triangleSolverTest
 
 		}
 
-		TEST_METHOD(FinalTest3) {
+		TEST_METHOD(FailingTest3) {
 
 			int triangleSides[] = { 8, 12, 12};
 			char* tringleType[25];
