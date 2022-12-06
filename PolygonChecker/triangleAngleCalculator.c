@@ -1,6 +1,8 @@
-// Ryan Tu - November 2022
-// Software Implementation group project
-// Calculates angles inside of triangle and returns sum
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
+// Triangle Angle Calculator Function
 
 #include <stdio.h>
 #include <math.h>

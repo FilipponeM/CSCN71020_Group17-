@@ -1,3 +1,9 @@
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
+// Triangle side solver function
+
 #include <stdio.h>
 #include <stdbool.h>
 

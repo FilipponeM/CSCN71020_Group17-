@@ -1,3 +1,9 @@
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
+// Test cases for rectangle function
+
 #include "pch.h"
 #include "CppUnitTest.h"
 
@@ -437,5 +443,72 @@ namespace rectangleSolverTest
 
 			Assert::AreEqual(10.0, result);
 		}
+
+		TEST_METHOD(FailingIsRectangle_Test1)
+		{
+			// Not a rectangle
+			POINT p[4];
+			p[0].x = 1;
+			p[0].y = 1;
+			p[1].x = 0;
+			p[1].y = 3;
+			p[2].x = 4;
+			p[2].y = 1;
+			p[3].x = 8;
+			p[3].y = 3;
+
+			bool result = isRectangle(p);
+			Assert::AreEqual(true, result);
+		}
+
+		TEST_METHOD(FailingIsRectangle_Test2)
+		{
+			// Not a rectangle
+			POINT p[4];
+			p[0].x = 0;
+			p[0].y = 0;
+			p[1].x = 0;
+			p[1].y = 0;
+			p[2].x = 0;
+			p[2].y = 0;
+			p[3].x = 0;
+			p[3].y = 0;
+
+			bool result = isRectangle(p);
+			Assert::AreEqual(true, result);
+		}
+
+		TEST_METHOD(FailingRectangleArea_Test1)
+		{
+			POINT p[4];
+			p[0].x = 0;
+			p[0].y = 1;
+			p[1].x = 3;
+			p[1].y = 1;
+			p[2].x = 3;
+			p[2].y = 8;
+			p[3].x = 0;
+			p[3].y = 8;
+
+			double result = round(findRectangleArea(p));
+
+			Assert::AreEqual(20.0, result);
+		}
+
+		// Failing side length test
+		TEST_METHOD(FailingSideLength_Test1)
+		{
+			POINT a, b;
+			a.x = 3;
+			a.y = 6;
+			b.x = 4;
+			b.y = 10;
+
+			double result = round(findSideLength(a, b));
+
+			Assert::AreEqual(3.0, result);
+		}
+
+		// end of tests
 	};
 }

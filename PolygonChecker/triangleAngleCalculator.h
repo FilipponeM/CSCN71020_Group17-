@@ -1,5 +1,8 @@
-// Ryan Tu - November 2022 - software implementation group project
-// triangle angle calculator header file 
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
+// Triangle Angle Header File
 
 #pragma once
 

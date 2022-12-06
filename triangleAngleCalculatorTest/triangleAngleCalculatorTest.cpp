@@ -1,7 +1,8 @@
-// Test for angles calculator 
-// Will test for the sum of angles + individual angles 
-// Test is using equilateral and scalene triangles 
-// Ryan Tu - November 2022
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
+// Test cases for triangle angle function - tests the angles and sum
 
 #include "pch.h"
 #include "CppUnitTest.h"
@@ -115,7 +116,7 @@ namespace triangleAngleCalculatorTest
 			Assert::AreEqual(37.0, rounded);
 		}
 
-		// Failing test cases 
+		// Failing test cases [
 		TEST_METHOD(FailingSumOfAngleTest)
 		{
 			int triangleSides[] = { 4, 4, 4};

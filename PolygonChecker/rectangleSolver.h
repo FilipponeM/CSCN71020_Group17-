@@ -1,9 +1,11 @@
-#pragma once
 // Group 17 Final Project 
 // Triangle and Rectangle Solver 
 // Fall 2022 - Software Implementation 
 // Members: Matteo Filippone, Yao Wang, Ryan Tu
 // Function declaration and description for rectangle solving
+
+#pragma once
+
 #define RECTANGLEPOINTS 4 // number of rectangle sides
 #define RECTANGLELINES 6 // number of connecting points in a rectangle
 #define SQUARE(n)	n*n

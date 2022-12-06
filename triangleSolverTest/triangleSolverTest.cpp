@@ -1,6 +1,8 @@
-// Test for triangle sides function 
-// Will test the return of the triangle sides finder 
-// Ryan Tu - November 2022
+// Group 17 Final Project 
+// Triangle and Rectangle Solver 
+// Fall 2022 - Software Implementation 
+// Members: Matteo Filippone, Yao Wang, Ryan Tu
+// Test cases for triangle solver 
 
 #include "pch.h"
 #include "CppUnitTest.h"

@@ -2,6 +2,7 @@
 // Triangle and Rectangle Solver 
 // Fall 2022 - Software Implementation 
 // Members: Matteo Filippone, Yao Wang, Ryan Tu
+// Main source file 
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -52,6 +53,15 @@ int main() {
 			int triangleSides[TRIANGLESIDES] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
 			
+			// display error message if sum of two side lengths is less than or equal to third side length 
+			// this means it is not a triangle
+			if (triangleSidesPtr[0] + triangleSidesPtr[1] <= triangleSidesPtr[2] || triangleSidesPtr[0] + triangleSidesPtr[2] <= triangleSidesPtr[1]
+				|| triangleSidesPtr[1] + triangleSidesPtr[2] <= triangleSidesPtr[0])
+			{
+				printf("Invalid side lengths, please try again.");
+				break;
+			}
+
 			// returns the type of triangle 
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
