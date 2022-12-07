@@ -9,7 +9,7 @@
 
 POINT createPoint(int x, int y, char id)
 {
-	POINT p;
+	POINT p = { 0 };;
 	p.x = x;
 	p.y = y;
 	p.id = id;
@@ -37,7 +37,7 @@ int findLargest(int* n, int size)
 bool isRectangle(POINT* p)
 {
 	// find distances b/w points
-	int distance[RECTANGLELINES]; 
+	int distance[RECTANGLELINES] = { 0 };;
 	int count = 0;
 	for (int i = 0; i < RECTANGLEPOINTS; i++)
 	{
@@ -139,7 +139,7 @@ void sortRectanglePoints(POINT* p)
 {
 
 	// find distances b/w points
-	int distance[RECTANGLELINES];
+	int distance[RECTANGLELINES] = { 0 };;
 	int count = 0;
 	for (int i = 0; i < RECTANGLEPOINTS; i++)
 	{

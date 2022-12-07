@@ -51,7 +51,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(isRectangle_Test1)
 		{
 			// horizaontal rectangle
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 0;
@@ -67,7 +67,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(isRectangle_Test2)
 		{
 			// square
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 0;
@@ -83,7 +83,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(isRectangle_Test3)
 		{
 			// verticle rectangle
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 0;
@@ -99,7 +99,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(isRectangle_Test4)
 		{
 			// diagonal rectangle
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = -2;
@@ -115,7 +115,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(isRectangle_Test5)
 		{
 			// not rectangle
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = -2;
@@ -131,7 +131,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(isRectangle_Test6)
 		{
 			// not rectangle not a 4 sided shape
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 0;
@@ -147,7 +147,7 @@ namespace rectangleSolverTest
 		// findDistanceUnit tests
 		TEST_METHOD(findDistanceUnit_Test1)
 		{
-			POINT a, b;
+			POINT a = { 0 } , b = { 0 };
 			a.x = 0;
 			a.y = 2;
 			b.x = 4;
@@ -157,7 +157,7 @@ namespace rectangleSolverTest
 		}
 		TEST_METHOD(findDistanceUnit_Test2)
 		{
-			POINT a, b;
+			POINT a = { 0 }, b = { 0 };
 			a.x = 6;
 			a.y = 2;
 			b.x = 3;
@@ -168,7 +168,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(findDistanceUnit_Test3)
 		{
 			// zero distance
-			POINT a, b;
+			POINT a = { 0 }, b = { 0 };
 			a.x = 0;
 			a.y = 2;
 			b.x = 0;
@@ -233,7 +233,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(sortRectanglePoints_Test1)
 		{
 			// no sort needed
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 3;
@@ -245,7 +245,7 @@ namespace rectangleSolverTest
 
 			sortRectanglePoints(p);
 			
-			POINT expected[4];
+			POINT expected[4] = { 0 };
 			expected[0].x = 0;
 			expected[0].y = 1;
 			expected[1].x = 3;
@@ -263,7 +263,7 @@ namespace rectangleSolverTest
 		}
 		TEST_METHOD(sortRectanglePoints_Test2)
 		{
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = -2;
@@ -274,7 +274,7 @@ namespace rectangleSolverTest
 			p[3].y = 6;
 			sortRectanglePoints(p);
 
-			POINT expected[4];
+			POINT expected[4] = { 0 };
 			expected[0].x = 0;
 			expected[0].y = 1;
 			expected[1].x = -2;
@@ -293,7 +293,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(sortRectanglePoints_Test3)
 		{
 			// square
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 2;
@@ -305,7 +305,7 @@ namespace rectangleSolverTest
 
 			sortRectanglePoints(p);
 
-			POINT expected[4];
+			POINT expected[4] = { 0 };
 			expected[0].x = 0;
 			expected[0].y = 1;
 			expected[1].x = 0;
@@ -324,7 +324,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(sortRectanglePoints_Test4)
 		{
 			// diagonal rectangle
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 1;
@@ -336,7 +336,7 @@ namespace rectangleSolverTest
 
 			sortRectanglePoints(p);
 
-			POINT expected[4];
+			POINT expected[4] = { 0 };
 			expected[0].x = 0;
 			expected[0].y = 1;
 			expected[1].x = 3;
@@ -355,7 +355,7 @@ namespace rectangleSolverTest
 		// findPerimeter tests
 		TEST_METHOD(findPerimeter_test1)
 		{
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 3;
@@ -371,7 +371,7 @@ namespace rectangleSolverTest
 		}
 		TEST_METHOD(findPerimeter_test2)
 		{
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 1;
@@ -388,7 +388,7 @@ namespace rectangleSolverTest
 		// findRectangleArea tests
 		TEST_METHOD(findRectangleArea_test1)
 		{
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 3;
@@ -404,24 +404,24 @@ namespace rectangleSolverTest
 		}
 		TEST_METHOD(findRectangleArea_test2)
 		{
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
-			p[1].x = 3;
-			p[1].y = 1;
+			p[1].x = -2;
+			p[1].y = 3;
 			p[2].x = 3;
-			p[2].y = 6;
-			p[3].x = 0;
+			p[2].y = 4;
+			p[3].x = 1;
 			p[3].y = 6;
 
 			double result = round(findRectangleArea(p));
 
-			Assert::AreEqual(15.0, result);
+			Assert::AreEqual(14.0, result);
 		}
 		// findSideLength tests
 		TEST_METHOD(findSideLength_Test1)
 		{
-			POINT a, b;
+			POINT a = { 0 }, b = { 0 };
 			a.x = 5;
 			a.y = 6;
 			b.x = 4;
@@ -433,7 +433,7 @@ namespace rectangleSolverTest
 		}
 		TEST_METHOD(findSideLength_Test2)
 		{
-			POINT a, b;
+			POINT a = { 0 }, b = { 0 };
 			a.x = 7;
 			a.y = 6;
 			b.x = 0;
@@ -447,7 +447,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(FailingIsRectangle_Test1)
 		{
 			// Not a rectangle
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 1;
 			p[0].y = 1;
 			p[1].x = 0;
@@ -464,7 +464,7 @@ namespace rectangleSolverTest
 		TEST_METHOD(FailingIsRectangle_Test2)
 		{
 			// Not a rectangle
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 0;
 			p[1].x = 0;
@@ -480,7 +480,7 @@ namespace rectangleSolverTest
 
 		TEST_METHOD(FailingRectangleArea_Test1)
 		{
-			POINT p[4];
+			POINT p[4] = { 0 };
 			p[0].x = 0;
 			p[0].y = 1;
 			p[1].x = 3;
@@ -498,7 +498,7 @@ namespace rectangleSolverTest
 		// Failing side length test
 		TEST_METHOD(FailingSideLength_Test1)
 		{
-			POINT a, b;
+			POINT a = { 0 } , b = { 0 };
 			a.x = 3;
 			a.y = 6;
 			b.x = 4;
